@@ -4,6 +4,7 @@
  
 ## databaseChangeLog
 - http://www.liquibase.org/documentation/databasechangelog.html
+- http://www.liquibase.org/documentation/xml_format.html
 - http://www.liquibase.org/bestpractices
 
 ### includeAll
@@ -39,7 +40,4 @@ https://www.liquibase.org/documentation/changes/insert.html
 - https://www.baeldung.com/liquibase-refactor-schema-of-java-app
 - https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-migration-properties
 - http://www.liquibase.org
-
-
-
 - https://www.liquibase.org/documentation/column.html
