@@ -15,6 +15,10 @@ Need to specify all files one by one.
 
 ### preConditions
 
+### insert
+Inserts data into an existing table
+https://www.liquibase.org/documentation/changes/insert.html
+
 ## Sources
 - https://blog.soat.fr/2015/10/liquibase-et-le-versioning-de-base-de-donnees/
 - https://www.baeldung.com/liquibase-refactor-schema-of-java-app
