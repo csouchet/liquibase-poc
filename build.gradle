@@ -1,0 +1,57 @@
+buildscript {
+	ext {
+		springBootPlugin = 'org.springframework.boot:spring-boot-gradle-plugin'
+		springBootVersion = '2.2.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("${springBootPlugin}:${springBootVersion}")
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'org.csouchet.poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.liquibase:liquibase-core:3.8.7'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'java'
+
+springBoot {
+	mainClassName = 'org.csouchet.poc.liquibase.LiquibaseApplication'
+}
+
+
+test {
+	useJUnitPlatform()
+}
