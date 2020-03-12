@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+	<changeSet id="1" author="csouchet">
+		<createTable tableName="ANIMAL">
+			<column name="ID" type="java.sql.Types.BIGINT">
+				<constraints primaryKey="true" primaryKeyName="PK_ANIMAL" nullable="false" />
+			</column>
+			<column name="NAME" type="java.sql.Types.VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="OWNER_ID" type="java.sql.Types.BIGINT"/>
+		</createTable>
+
+		<addUniqueConstraint constraintName="UC_ANIMAL" tableName="ANIMAL" columnNames="ID,NAME" />
+	</changeSet>
+
+	<changeSet id="2" author="csouchet">
+		<addForeignKeyConstraint constraintName="FK_OWNER"
+								 baseTableName="ANIMAL" baseColumnNames="OWNER_ID"
+								 referencedTableName="OWNER" referencedColumnNames="ID"
+								 deferrable="false" initiallyDeferred="false"
+								 onDelete="NO ACTION" onUpdate="NO ACTION" />
+	</changeSet>
+
+</databaseChangeLog>
