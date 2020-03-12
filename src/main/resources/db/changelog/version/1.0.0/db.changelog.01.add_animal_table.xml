@@ -2,7 +2,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-	<changeSet id="1" author="csouchet">
+	<changeSet id="1" author="csouchet" logicalFilePath="1.0.0/add_animal_table.xml">
 		<createTable tableName="ANIMAL">
 			<column name="ID" type="java.sql.Types.BIGINT">
 				<constraints primaryKey="true" primaryKeyName="PK_ANIMAL" nullable="false" />
@@ -16,7 +16,7 @@
 		<addUniqueConstraint constraintName="UC_ANIMAL" tableName="ANIMAL" columnNames="ID,NAME" />
 	</changeSet>
 
-	<changeSet id="2" author="csouchet">
+	<changeSet id="2" author="csouchet" logicalFilePath="1.0.0/add_animal_table.xml">
 		<addForeignKeyConstraint constraintName="FK_OWNER"
 								 baseTableName="ANIMAL" baseColumnNames="OWNER_ID"
 								 referencedTableName="OWNER" referencedColumnNames="ID"

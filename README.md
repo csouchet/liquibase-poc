@@ -1,8 +1,10 @@
 # Poc with Liquibase
 
-## Liquibase's working
-
-### ![Insert](image/Insert.png)
+ ![Insert](image/Insert.png)
+ 
+## databaseChangeLog
+- http://www.liquibase.org/documentation/databasechangelog.html
+- http://www.liquibase.org/bestpractices
 
 ### includeAll
 
@@ -13,7 +15,20 @@ Au sein de l’équipe, il convient donc de définir au préalable une conventio
 ### include
 Need to specify all files one by one.
 
+### logicalFilePath
+Use to override the file name and path when creating the unique identifier of change sets. 
+Required when moving or renaming change logs, or moving change set to another file.
+
+## ChangeSet
+http://www.liquibase.org/documentation/changes/index.html
+
 ### preConditions
+Preconditions can be attached to change logs or changesets to control the execution of an update based on the state of the database.
+
+If desired, a precondition can be the only tag in a <changeSet>.
+
+Preconditions at the changelog level apply to all changeSets, not just those listed in the current changelog or its child changelogs.
+If any of the preconditions fail, the Liquibase will exit with an error message explaining what failed. 
 
 ### insert
 Inserts data into an existing table
@@ -24,7 +39,7 @@ https://www.liquibase.org/documentation/changes/insert.html
 - https://www.baeldung.com/liquibase-refactor-schema-of-java-app
 - https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-migration-properties
 - http://www.liquibase.org
-- http://www.liquibase.org/bestpractices
-- http://www.liquibase.org/documentation/changes/index.html
-- http://www.liquibase.org/documentation/databasechangelog.html
+
+
+
 - https://www.liquibase.org/documentation/column.html

@@ -6,24 +6,11 @@
 	<property name="now" value="sysdate" dbms="oracle" />
 	<property name="now" value="SYSDATE" dbms="postgresql" />
 
-	<changeSet author="csouchet" id="1">
+	<changeSet author="csouchet" id="1" logicalFilePath="1.0.1/update_id_generator_table.xml">
 		<preConditions onFailMessage="Table ID_GENERATOR doesn't exist">
-			<changeSetExecuted changeLogFile="db/changelog/version/0.0.0/db.changelog.00.initIdGenerator.xml" author="csouchet" id="1" />
+			<changeSetExecuted changeLogFile="0.0.0/add_id_generator_table.xml" author="csouchet" id="1" />
 		</preConditions>
 
 		<sql>update ID_GENERATOR set VALUE = 50</sql>
-	</changeSet>
-
-	<changeSet author="csouchet" id="2">
-		<preConditions onFailMessage="Table ANIMAL doesn't exist">
-			<tableExists tableName="ANIMAL"/>
-			<columnExists tableName="ANIMAL" columnName="name"/>
-			<columnExists tableName="ANIMAL" columnName="id"/>
-		</preConditions>
-
-		<insert tableName="ANIMAL">
-			<column name="id" value="6"/>
-			<column name="name" value="Sushi"/>
-		</insert>
 	</changeSet>
 </databaseChangeLog>
