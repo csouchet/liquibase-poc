@@ -13,15 +13,14 @@ Au sein de l’équipe, il convient donc de définir au préalable une conventio
 ### include
 Need to specify all files one by one.
 
-### insert
-Inserts data into an existing table
-https://www.liquibase.org/documentation/changes/insert.html
+### preConditions
 
 ## Sources
 - https://blog.soat.fr/2015/10/liquibase-et-le-versioning-de-base-de-donnees/
 - https://www.baeldung.com/liquibase-refactor-schema-of-java-app
+- https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-migration-properties
 - http://www.liquibase.org
 - http://www.liquibase.org/bestpractices
-- https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#data-migration-properties
 - http://www.liquibase.org/documentation/changes/index.html
 - http://www.liquibase.org/documentation/databasechangelog.html
+- https://www.liquibase.org/documentation/column.html
