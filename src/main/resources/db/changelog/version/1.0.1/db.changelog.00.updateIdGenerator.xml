@@ -9,4 +9,11 @@
 	<changeSet author="csouchet" id="1">
 		<sql>update ID_GENERATOR set VALUE = 50</sql>
 	</changeSet>
+
+	<changeSet author="csouchet" id="2">
+		<insert tableName="ANIMAL">
+			<column name="id" value="6"/>
+			<column name="name" value="Sushi"/>
+		</insert>
+	</changeSet>
 </databaseChangeLog>
