@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+	<changeSet author="csouchet" id="1" logicalFilePath="test/db.changelog.00.update_id_generator_table.xml">
+		<preConditions onFailMessage="Table ID_GENERATOR doesn't exists">
+			<changeSetExecuted changeLogFile="0.0.0/add_id_generator_table.xml" author="csouchet" id="1" />
+		</preConditions>
+
+		<sql>update ID_GENERATOR set VALUE = 100</sql>
+	</changeSet>
+</databaseChangeLog>
